@@ -27,21 +27,22 @@ const DashboardNavbar = ({ onMobileNavOpen, ...rest }) => {
           <Logo />
         </RouterLink>
         <Box sx={{ flexGrow: 1 }} />
-        <Hidden xlDown>
+        <Hidden only={['xs', 'md', 'sm']}>
           <IconButton color="inherit" size="large">
-            <Badge
-              badgeContent={notifications.length}
-              color="primary"
-              variant="dot"
-            >
+            <Badge badgeContent={notifications.length} color="primary" variant="dot">
+              {' '}
               <NotificationsIcon />
+              {' '}
             </Badge>
+            {' '}
+
           </IconButton>
+          {' '}
           <IconButton color="inherit" size="large">
             <InputIcon />
           </IconButton>
         </Hidden>
-        <Hidden lgUp>
+        <Hidden only={['lg', 'xl']}>
           <IconButton color="inherit" onClick={onMobileNavOpen} size="large">
             <MenuIcon />
           </IconButton>
